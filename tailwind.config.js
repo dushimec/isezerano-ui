@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customBlue: '#3d5af1',
+      },
+      backdropBlur: {
+        'custom': '234px', // Add custom blur value
+      },
+    },
   },
   plugins: [],
 };
