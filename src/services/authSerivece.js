@@ -1,4 +1,3 @@
-
 import axiosInstance, { setToken, removeToken } from "../axiosConfig";
 
 export const requestOtp = async (phoneNumber) => {
@@ -6,7 +5,7 @@ export const requestOtp = async (phoneNumber) => {
     const response = await axiosInstance.post("/auth/request", { phoneNumber });
     return response.data;
   } catch (error) {
-    throw error.response.data.message || error.message;
+    throw error.response.data.error || error.message;
   }
 };
 
@@ -16,7 +15,7 @@ export const verifyOtp = async (phoneNumber, otp) => {
     setToken(response.data.token);
     return response.data; 
   } catch (error) {
-    throw error.response.data.message || error.message;
+    throw error.response.data.error || error.message;
   }
 };
 
@@ -25,7 +24,7 @@ export const registerAdmin = async (adminData) => {
     const response = await axiosInstance.post("/auth/register-admin", adminData);
     return response.data;
   } catch (error) {
-    throw error.response.data.message || error.message;
+    throw error.response.data.error || error.message;
   }
 };
 
@@ -35,7 +34,7 @@ export const loginAdmin = async (adminCredentials) => {
     setToken(response.data.token);
     return response.data;
   } catch (error) {
-    throw error.response.data.message || error.message;
+    throw error.response.data.error || error.message;
   }
 };
 
