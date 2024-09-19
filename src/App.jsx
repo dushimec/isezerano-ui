@@ -8,6 +8,7 @@ import Register from './components/Register';
 import SingerDashboard from './pages/SingerDashboard';
 import SecretaryDashboard from './pages/SecretaryDashboard';
 import DisciplinaryDashboard from './pages/DisciplinaryDashboard';
+import Loginuser from './components/Loginuser';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       <Route path="/singer-dashboard" element={<SingerDashboard />} />
       <Route path="/secretary-dashboard" element={<SecretaryDashboard />} />
       <Route path="/disciplinary-dashboard" element={<DisciplinaryDashboard />} />
-      <Route path="/" element={<LoginPage />} />
+      <Route path="/" element={<Loginuser />} />
       
     </Routes>
     </AuthProvider>

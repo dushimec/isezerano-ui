@@ -12,15 +12,30 @@ export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const requestOtp = (phoneNumber) => {
-    dispatch(requestOtpThunk(phoneNumber));
+    try {
+      
+      dispatch(requestOtpThunk(phoneNumber));
+    } catch (error){
+      if (error.response?.status === 500) {
+        throw new Error(error.response.data.message);
+      } else {
+        throw new Error(error.response?.data?.error );
+      }
+    }
   };
 
   const verifyOtp = async (phoneNumber, otp) => {
     try {
       const result = await dispatch(verifyOtpThunk({ phoneNumber, otp })).unwrap();
+      localStorage.setItem('token', result.token); 
+      localStorage.setItem('role', result.role);   
       navigateToRole(result.role);
     } catch (error) {
-      console.error('Failed to verify OTP:', error);
+      if (error.response?.status === 500) {
+        throw new Error(error.response.data.message || 'Server error. Please try again later.');
+      } else {
+        throw new Error(error.response?.data?.error || 'An unexpected error occurred.');
+      }
     }
   };
 
@@ -34,10 +49,15 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     dispatch(logoutAction());
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
   };
 
   const navigateToRole = (role) => {
     switch (role) {
+      case 'Admin':
+        navigate('/admin-dashboard');
+        break;
       case 'Singer':
         navigate('/singer-dashboard');
         break;
@@ -48,22 +68,21 @@ export const AuthProvider = ({ children }) => {
         navigate('/disciplinary-dashboard');
         break;
       default:
-        navigate('/login');
+        navigate('/');
     }
   };
 
   useEffect(() => {
-    if (status === 'loading') setIsLoading(true);
-    else setIsLoading(false);
-  }, [status]);
+    if (status === 'failed' && error) {
+      alert(`Error: ${error}`); // Replace with a more user-friendly way to display errors
+    }
+  }, [status, error]);
 
   return (
-    <AuthContext.Provider value={{ user, token, isLoading, error, requestOtp, verifyOtp, loginAdmin, registerAdmin, logout }}>
+    <AuthContext.Provider value={{ requestOtp, verifyOtp, loginAdmin, registerAdmin, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
+export const useAuth = () => useContext(AuthContext);
