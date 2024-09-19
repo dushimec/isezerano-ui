@@ -11,32 +11,31 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white">
-      <div className="bg-white flex shadow-2xl rounded-lg overflow-hidden max-w-5xl  w-[843px] h-[503px]">
+    <div className="min-h-screen flex items-center justify-center bg-white px-4">
+      <div className="bg-white flex flex-col md:flex-row shadow-2xl rounded-lg overflow-hidden max-w-5xl w-full md:w-[843px] h-auto md:h-[503px]">
         {/* Left Section */}
-        <div className="relative w-2/5 bg-blue-600 hidden md:flex flex-col justify-center items-center p-10 mt-10 rounded-tr-[85px]">
-          <h1 className="text-white text-4xl font-bold mb-4">
+        <div className="relative w-full md:w-2/5 bg-blue-600 hidden md:flex flex-col justify-center items-center p-10 mt-6 md:mt-10 rounded-tr-[85px]">
+          <h1 className="text-white text-3xl md:text-4xl font-bold mb-4 text-center">
             ISEZERANO
             <br />
             Attendance List
           </h1>
-         
-          <div className="absolute top-8 right-9 bg-white h-16 w-16 rounded-full"></div>
-          <div className="absolute top-4 right-6 bg-white h-16 w-16 rounded-full opacity-10"></div>
+          <div className="absolute top-8 right-9 bg-white h-12 w-12 md:h-16 md:w-16 rounded-full"></div>
+          <div className="absolute top-4 right-6 bg-white h-12 w-12 md:h-16 md:w-16 rounded-full opacity-10"></div>
 
-          <div className="absolute bottom-8 left-16 bg-white h-12 w-12 rounded-full"></div>
-          <div className="absolute bottom-12 left-20 bg-white h-12 w-12 rounded-full opacity-10"></div>
-        </div >
+          <div className="absolute bottom-8 left-16 bg-white h-10 w-10 md:h-12 md:w-12 rounded-full"></div>
+          <div className="absolute bottom-12 left-20 bg-white h-10 w-10 md:h-12 md:w-12 rounded-full opacity-10"></div>
+        </div>
 
         {/* Right Section */}
-        <div className="w-full md:w-1/2 p-10 flex flex-col justify-center">
+        <div className="w-full md:w-3/5 p-6 md:p-10 flex flex-col justify-center">
           <div className="flex flex-col items-center mb-6">
-            <h2 className="text-4xl font-bold text-blue-600">Register</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-600">Register</h2>
             <p className="text-sm text-gray-500">Create account</p>
           </div>
 
           {/* Form */}
-          <form className="space-y-6">
+          <form className="space-y-4 md:space-y-6">
             <div className="relative">
               <input
                 type="text"
