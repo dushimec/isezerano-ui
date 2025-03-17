@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom'; // No need to import Router here
 
 import { AuthProvider } from './services/authProvider';
@@ -9,10 +9,16 @@ import SingerDashboard from './pages/SingerDashboard';
 import SecretaryDashboard from './pages/SecretaryDashboard';
 import DisciplinaryDashboard from './pages/DisciplinaryDashboard';
 import Loginuser from './components/Loginuser';
+import Popup from "./components/Popup/Popup"
 
-function App() {
+function App() {  const [isPopupOpen, setIsPopupOpen] = useState(false);  
+
+  
+
+
   return (
     <AuthProvider>
+    <Popup isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} />
     <Routes>
      <Route path="/register" element={<Register />} />
       <Route path="/login" element={<LoginPage />} />
