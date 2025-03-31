@@ -1,5 +1,6 @@
 import React from 'react'
-import Navbar from "../components/Navbar/Navbar"
+import Navbar from '../components/singer/NavbarSinger/Navbar';
+
 
 const SingerDashboard = () => {  const toggleIsPopupOpen = () => {
   setIsPopupOpen((prev) => {
@@ -10,7 +11,8 @@ const SingerDashboard = () => {  const toggleIsPopupOpen = () => {
 };
 
   return (
-    <div>  <Navbar handleIsPopupOpen={toggleIsPopupOpen} />
+    <div>  
+    <Navbar handleIsPopupOpen={toggleIsPopupOpen} />
 
     </div>
   )

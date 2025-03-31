@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { FaPhoneAlt } from 'react-icons/fa';
-import choir from "../assets/users 1.png";
 import { ImSpinner2 } from 'react-icons/im';
 import { useAuth } from '../services/authProvider';
+// import userImg from "../assets/users 1.png";
 
 const Login = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -102,9 +102,9 @@ const Login = () => {
               </button>
             </div>
           </form>
-          <div className="flex flex-row items-end justify-end">
+          {/* <div className="flex flex-row items-end justify-end">
             <img src={choir} alt="choir" />
-          </div>
+          </div> */}
         </div>
         {showLoadingPopup && !showPopup && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
