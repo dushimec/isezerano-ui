@@ -1,5 +1,5 @@
 import React from "react";
-import Chatbot from "../Chatbot/Chatbot";
+import Chatbot from "../../disciplinay/ChatbotDisciplinary/Chatbot";
 
 const Popup = ({ isPopupOpen, setIsPopupOpen }) => {
   console.log("Popup Component Rendered, isPopupOpen:", isPopupOpen); // Logs the state of the popup

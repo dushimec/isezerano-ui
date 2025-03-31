@@ -9,7 +9,8 @@ import SingerDashboard from './pages/SingerDashboard';
 import SecretaryDashboard from './pages/SecretaryDashboard';
 import DisciplinaryDashboard from './pages/DisciplinaryDashboard';
 import Loginuser from './components/Loginuser';
-import Popup from "./components/Popup/Popup"
+import Popup from './components/disciplinay/PopupDisciplinary/Popup';
+import Claim from './components/disciplinay/Claim/Claim';
 
 function App() {  const [isPopupOpen, setIsPopupOpen] = useState(false);  
 
@@ -27,6 +28,8 @@ function App() {  const [isPopupOpen, setIsPopupOpen] = useState(false);
       <Route path="/secretary-dashboard" element={<SecretaryDashboard />} />
       <Route path="/disciplinary-dashboard" element={<DisciplinaryDashboard />} />
       <Route path="/" element={<Loginuser />} />
+      <Route path="/claim" element={<Claim />} />
+
       
     </Routes>
     </AuthProvider>

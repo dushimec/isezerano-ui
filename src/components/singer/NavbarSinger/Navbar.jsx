@@ -6,11 +6,11 @@ import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHouse, faUser, faBars } from "@fortawesome/free-solid-svg-icons"
-import Img1 from "../../assets/eng.webp"
-import Img2 from "../../assets/rw.png"
-import Img3 from "../../assets/question 1.png"
-import ProfileSidebar from "../Hero/ProfileSidebar"
-import ProgressBar from "../ProgressBar/ProgressBar"
+import Img1 from "../../../assets/eng.webp"
+import Img2 from "../../../assets/rw.png"
+import Img3 from "../../../assets/question 1.png"
+import ProfileSidebar from "../../disciplinay/HeroDisciplinary/ProfileSidebar"
+import ProgressBar from "../../disciplinay/ProgressBarDisciplinary/ProgressBar"
 import { useCallback } from "react"
 
 const Navbar = ({ handleIsPopupOpen }) => {
@@ -180,7 +180,7 @@ const Navbar = ({ handleIsPopupOpen }) => {
           {/* Title */}
           <div className="bg-light mt-14">
             <a className="font-bold text-2xl block text-center" href="#" style={{ color: "#3D5AF1" }}>
-              CHORISTE DASHBOARD
+              CHORISTER DASHBOARD
             </a>
           </div>
           <div>
@@ -346,7 +346,7 @@ const Navbar = ({ handleIsPopupOpen }) => {
                         <th className="px-2 md:px-4 py-2 text-left text-xs font-medium text-[#565E6C] uppercase tracking-wider">
                           Punishment
                         </th>
-                        <th className="px-2 md:px-20 py-3 text-left text-xs font-medium text-[#565E6C] uppercase tracking-wider">
+                        <th className="px-2 md:px-4 py-3 text-left text-xs font-medium text-[#565E6C] uppercase tracking-wider">
                           Actions
                         </th>
                       </tr>
@@ -415,10 +415,10 @@ const Navbar = ({ handleIsPopupOpen }) => {
                         <td className="px-2 md:px-4 py-3 whitespace-nowrap text-xs md:text-sm text-[171A1F]">
                           {record.punishment}
                         </td>
-                        <td className="px-2 md:px-8 py-3 whitespace-nowrap text-right text-xs md:text-sm font-medium">
+                        <td className="px-2 md:px-8 py-3 whitespace-nowrap text-left text-xs md:text-sm font-medium">
                           <button
                             onClick={handlePopupToggle}
-                            className="bg-[#3D5AF1] text-white px-3 py-1 md:px-4 md:py-2 rounded-full"
+                            className="bg-[#3D5AF1] text-white px- py- md:px-4 md:py-2 rounded-full"
                           >
                             Claim
                           </button>
