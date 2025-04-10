@@ -1,9 +1,21 @@
-import React from 'react'
-
+import React from "react";
+import Navbar from "../components/secretary/NavbarSecretary/Navbar";
+import Secretary from "../components/secretary/section";
 const SecretaryDashboard = () => {
-  return (
-    <div>SecretaryDashboard</div>
-  )
-}
+  const toggleIsPopupOpen = () => {
+    setIsPopupOpen((prev) => {
+      const newState = !prev;
+      console.log("Popup Toggled:", newState); // Debug log
+      return newState;
+    });
+  };
 
-export default SecretaryDashboard
+  return (
+    <div>
+      <Navbar handleIsPopupOpen={toggleIsPopupOpen} />
+      {/* <Secretary /> */}
+    </div>
+  );
+};
+
+export default SecretaryDashboard;
